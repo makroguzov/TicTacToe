@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="StartViewController" id="BYZ-38-t0r" customClass="StartViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ypk-Qa-9AW">
+                                <rect key="frame" x="176" y="429" width="62" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <segue destination="8bB-nP-YMd" kind="show" id="sha-VX-Beu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ypk-Qa-9AW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pig-y8-elf"/>
+                            <constraint firstItem="Ypk-Qa-9AW" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="xef-qb-Klh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-281" y="112"/>
+        </scene>
+        <!--Init Player View Controller-->
+        <scene sceneID="lw3-qT-pJo">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="8bB-nP-YMd" customClass="InitPlayerViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lK9-kw-4Ad">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kVY-dO-hEX">
+                                <rect key="frame" x="107" y="358" width="200" height="190"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7WW-Bm-wyn">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9fg-z5-77q">
+                                        <rect key="frame" x="0.0" y="70" width="200" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xB9-dK-Nxu">
+                                        <rect key="frame" x="0.0" y="140" width="200" height="51"/>
+                                        <segments>
+                                            <segment title="Крестики"/>
+                                            <segment title="Нолики"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="InW-gD-flI"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yF9-0E-eQ9">
+                                <rect key="frame" x="177" y="598" width="60" height="30"/>
+                                <state key="normal" title="Создать"/>
+                                <connections>
+                                    <action selector="createPlayerButtonAction:" destination="8bB-nP-YMd" eventType="touchUpInside" id="QVK-Lx-VYr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NgB-QU-CT9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kVY-dO-hEX" firstAttribute="centerY" secondItem="NgB-QU-CT9" secondAttribute="centerY" id="0Xg-FE-YuX"/>
+                            <constraint firstItem="yF9-0E-eQ9" firstAttribute="centerX" secondItem="NgB-QU-CT9" secondAttribute="centerX" id="3t3-Di-Vg3"/>
+                            <constraint firstItem="kVY-dO-hEX" firstAttribute="centerX" secondItem="NgB-QU-CT9" secondAttribute="centerX" id="jI0-Bb-DR5"/>
+                            <constraint firstItem="yF9-0E-eQ9" firstAttribute="top" secondItem="kVY-dO-hEX" secondAttribute="bottom" constant="50" id="neB-H4-PNX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GWE-T7-627"/>
+                    <connections>
+                        <outlet property="createPlayerButton" destination="yF9-0E-eQ9" id="ice-PI-8Ho"/>
+                        <outlet property="figureSegmentControl" destination="xB9-dK-Nxu" id="zGg-re-6sL"/>
+                        <outlet property="playerLable" destination="7WW-Bm-wyn" id="zt0-co-aLc"/>
+                        <outlet property="playerNameTextField" destination="9fg-z5-77q" id="Jup-Vq-AY1"/>
+                        <segue destination="y6T-k2-Uwb" kind="show" identifier="StartTheGame" id="ikH-tt-PuK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l2h-Wg-xHX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="561" y="112"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="au1-mE-hhR">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="y6T-k2-Uwb" customClass="GameViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hkz-Ti-kFo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fnE-a7-dga"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5hl-yz-icz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6uN-gP-kxb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1530" y="112"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
