@@ -115,7 +115,10 @@
 		71B0B8FA25569E4D00AC5E15 /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				71B0B9BC2557099A00AC5E15 /* Facade */,
+				71B0B9B52557087100AC5E15 /* Draw Strategys */,
 				71B0B93C2556A16300AC5E15 /* Models */,
+				71B0B99C2556E12400AC5E15 /* Cell */,
 				71B0B9312556A0F600AC5E15 /* View Controllers */,
 				71B0B93D2556A16D00AC5E15 /* Support Files */,
 			);
@@ -143,7 +146,6 @@
 		71B0B9312556A0F600AC5E15 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				71B0B99C2556E12400AC5E15 /* Cell */,
 				71B0B96E2556CCEC00AC5E15 /* GameViewController.swift */,
 				71B0B9752556CD0000AC5E15 /* InitPlayerViewController.swift */,
 				71B0B9842556CDF900AC5E15 /* StartViewController.swift */,
@@ -155,9 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				71B0B93E2556A1B200AC5E15 /* Player.swift */,
-				71B0B95B2556C2D600AC5E15 /* DrawStrategy.swift */,
 				71B0B9482556A34300AC5E15 /* Figure.swift */,
-				71B0B9972556DE2F00AC5E15 /* DrawStrategysFactory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +182,22 @@
 				71B0B99E2556E14500AC5E15 /* CollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		71B0B9B52557087100AC5E15 /* Draw Strategys */ = {
+			isa = PBXGroup;
+			children = (
+				71B0B9972556DE2F00AC5E15 /* DrawStrategysFactory.swift */,
+				71B0B95B2556C2D600AC5E15 /* DrawStrategy.swift */,
+			);
+			path = "Draw Strategys";
+			sourceTree = "<group>";
+		};
+		71B0B9BC2557099A00AC5E15 /* Facade */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Facade;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
