@@ -23,6 +23,7 @@
 		71B0B9982556DE2F00AC5E15 /* DrawStrategysFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B9972556DE2F00AC5E15 /* DrawStrategysFactory.swift */; };
 		71B0B99F2556E14500AC5E15 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B99D2556E14500AC5E15 /* CollectionViewCell.swift */; };
 		71B0B9A02556E14500AC5E15 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B0B99E2556E14500AC5E15 /* CollectionViewCell.xib */; };
+		71B0B9BE25570A2C00AC5E15 /* CollectionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B9BD25570A2C00AC5E15 /* CollectionCreator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		71B0B9972556DE2F00AC5E15 /* DrawStrategysFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawStrategysFactory.swift; sourceTree = "<group>"; };
 		71B0B99D2556E14500AC5E15 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		71B0B99E2556E14500AC5E15 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		71B0B9BD25570A2C00AC5E15 /* CollectionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 		71B0B9BC2557099A00AC5E15 /* Facade */ = {
 			isa = PBXGroup;
 			children = (
+				71B0B9BD25570A2C00AC5E15 /* CollectionCreator.swift */,
 			);
 			path = Facade;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				71B0B8FC25569E4D00AC5E15 /* AppDelegate.swift in Sources */,
 				71B0B9492556A34300AC5E15 /* Figure.swift in Sources */,
 				71B0B9862556CDF900AC5E15 /* StartViewController.swift in Sources */,
+				71B0B9BE25570A2C00AC5E15 /* CollectionCreator.swift in Sources */,
 				71B0B8FE25569E4D00AC5E15 /* SceneDelegate.swift in Sources */,
 				71B0B93F2556A1B200AC5E15 /* Player.swift in Sources */,
 				71B0B95C2556C2D600AC5E15 /* DrawStrategy.swift in Sources */,

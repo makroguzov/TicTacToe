@@ -26,6 +26,10 @@ class GameViewController: UIViewController {
             return players[ind + 1]
         }
     }
+    
+    
+    private let collectionCreator = CollectionCreator()
+    
     var players = [Player]()
     var fieldSize: Int = 3
 
@@ -33,57 +37,12 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 
         currentPlayer = nextPlayer
-        
-        addColectionView()
-        setUpColectionView()
+        addCollectionView()
     }
     
-    private func addColectionView() {
-        let frame = getCollectionFrame()
-        let collectionViewLayout = getCollectionViewLayout()
-        
-        collectionView = UICollectionView(frame: frame,
-                                          collectionViewLayout: collectionViewLayout)
-        
+    private func addCollectionView() {
+        collectionView = collectionCreator.createCollectionViewController(for: self, with: fieldSize)
         view.addSubview(collectionView)
-    }
-    
-    private func getCollectionFrame() -> CGRect {
-        let x: CGFloat = 0
-        let y: CGFloat = view.frame.midY - (view.frame.width / 2)
-        let width = view.frame.width
-        let height = view.frame.width
-        
-        return CGRect(x: x,
-                      y: y,
-                      width: width,
-                      height: height
-        )
-    }
-    
-    private func getCollectionViewLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewFlowLayout()
-        
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
-        
-        let width = view.frame.width / CGFloat(fieldSize)
-        let height = view.frame.width / CGFloat(fieldSize)
-        
-        layout.itemSize = CGSize(width: width,
-                                 height: height
-        )
-        
-        return layout
-    }
-    
-    private func setUpColectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
-        collectionView.register(UINib(nibName: CollectionViewCell.nibName, bundle: nil),
-                                forCellWithReuseIdentifier: CollectionViewCell.id
-        )
     }
 }
 
