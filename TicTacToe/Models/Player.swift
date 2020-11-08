@@ -17,8 +17,9 @@ class Player {
         self.drawStrategy = drawStrategy
     }
     
-    func draw() -> Figure {
-        return drawStrategy.drawFigure()
+    func draw(in field: GameField, at indexPath: IndexPath) {
+        let figure = drawStrategy.drawFigure()
+        field.draw(figure, in: indexPath)
     }
 }
 

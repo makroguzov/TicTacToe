@@ -27,8 +27,9 @@ class GameViewController: UIViewController {
         }
     }
     
-    
     private let collectionCreator = CollectionCreator()
+    
+    private var field: GameField?
     
     var players = [Player]()
     var fieldSize: Int = 3
@@ -36,6 +37,8 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        field = GameField(size: fieldSize)
+        
         currentPlayer = nextPlayer
         addCollectionView()
     }
@@ -48,7 +51,10 @@ class GameViewController: UIViewController {
 
 extension GameViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if let field = field {
+            currentPlayer?.draw(in: field, at: indexPath)
+            collectionView.reloadItems(at: [indexPath])
+        }
     }
 }
 
@@ -63,15 +69,29 @@ extension GameViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.id,
-                                                            for: indexPath) as? CollectionViewCell else {
+        if let figure = field?.getFigure(for: indexPath) {
+            return getFigureCell(with: figure, at: indexPath)
+        } else {
+            return getEmptyCell(at: indexPath)
+        }
+    }
+    
+    private func getEmptyCell(at indexPath: IndexPath) -> EmptyCollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmptyCollectionViewCell.id,
+                                                            for: indexPath) as? EmptyCollectionViewCell else {
             fatalError()
         }
-                
-        guard let figure = currentPlayer?.draw() else {
-            return UICollectionViewCell()
+
+        return cell
+    }
+    
+    private func getFigureCell(with figure: Figure, at indexPath: IndexPath) -> FigureCollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FigureCollectionViewCell.id,
+                                                            for: indexPath) as? FigureCollectionViewCell else {
+            fatalError()
         }
         
+        figure.draw(cell.bounds)
         cell.setUp(with: figure)
         return cell
     }

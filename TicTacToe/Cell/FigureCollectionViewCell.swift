@@ -7,10 +7,10 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+class FigureCollectionViewCell: UICollectionViewCell {
 
-    static let id = "CollectionViewCell"
-    static let nibName = "CollectionViewCell"
+    static let id = "FigureCollectionViewCell"
+    static let nibName = "FigureCollectionViewCell"
     
     @IBOutlet private weak var figure: UIView!
     
@@ -23,5 +23,7 @@ class CollectionViewCell: UICollectionViewCell {
 
     func setUp(with figure: Figure) {
         self.figure = figure
+        figure.bounds = bounds
+        figure.draw(bounds)
     }
 }

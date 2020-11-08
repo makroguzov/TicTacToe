@@ -17,5 +17,4 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
 
     }
-    
 }

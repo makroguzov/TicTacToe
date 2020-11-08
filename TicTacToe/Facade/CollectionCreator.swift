@@ -53,9 +53,14 @@ class CollectionCreator {
         collectionView.delegate = controller
         collectionView.dataSource = controller
         
-        collectionView.register(UINib(nibName: CollectionViewCell.nibName, bundle: nil),
-                                forCellWithReuseIdentifier: CollectionViewCell.id
+        collectionView.register(UINib(nibName: FigureCollectionViewCell.nibName, bundle: nil),
+                                forCellWithReuseIdentifier: FigureCollectionViewCell.id
         )
+
+        collectionView.register(UINib(nibName: EmptyCollectionViewCell.nibName, bundle: nil),
+                                forCellWithReuseIdentifier: EmptyCollectionViewCell.id
+        )
+
     }
 
 }

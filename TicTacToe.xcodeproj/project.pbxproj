@@ -21,9 +21,16 @@
 		71B0B9772556CD0000AC5E15 /* InitPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B9752556CD0000AC5E15 /* InitPlayerViewController.swift */; };
 		71B0B9862556CDF900AC5E15 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B9842556CDF900AC5E15 /* StartViewController.swift */; };
 		71B0B9982556DE2F00AC5E15 /* DrawStrategysFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B9972556DE2F00AC5E15 /* DrawStrategysFactory.swift */; };
-		71B0B99F2556E14500AC5E15 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B99D2556E14500AC5E15 /* CollectionViewCell.swift */; };
-		71B0B9A02556E14500AC5E15 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B0B99E2556E14500AC5E15 /* CollectionViewCell.xib */; };
+		71B0B99F2556E14500AC5E15 /* FigureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B99D2556E14500AC5E15 /* FigureCollectionViewCell.swift */; };
+		71B0B9A02556E14500AC5E15 /* FigureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B0B99E2556E14500AC5E15 /* FigureCollectionViewCell.xib */; };
 		71B0B9BE25570A2C00AC5E15 /* CollectionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B9BD25570A2C00AC5E15 /* CollectionCreator.swift */; };
+		71B0B9CF255726F000AC5E15 /* Zero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B9CE255726F000AC5E15 /* Zero.swift */; };
+		71B0B9E425572A5F00AC5E15 /* Cross.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B9E325572A5F00AC5E15 /* Cross.swift */; };
+		71B0B9E925572A9600AC5E15 /* Cross.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B0B9E825572A9600AC5E15 /* Cross.xib */; };
+		71B0B9EE25572C4D00AC5E15 /* Zero.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B0B9ED25572C4D00AC5E15 /* Zero.xib */; };
+		71B2230E255732B7003D05C2 /* GameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B2230D255732B7003D05C2 /* GameField.swift */; };
+		71B22317255737EA003D05C2 /* EmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B22315255737EA003D05C2 /* EmptyCollectionViewCell.swift */; };
+		71B22318255737EA003D05C2 /* EmptyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B22316255737EA003D05C2 /* EmptyCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,9 +71,16 @@
 		71B0B9752556CD0000AC5E15 /* InitPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitPlayerViewController.swift; sourceTree = "<group>"; };
 		71B0B9842556CDF900AC5E15 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		71B0B9972556DE2F00AC5E15 /* DrawStrategysFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawStrategysFactory.swift; sourceTree = "<group>"; };
-		71B0B99D2556E14500AC5E15 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		71B0B99E2556E14500AC5E15 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		71B0B99D2556E14500AC5E15 /* FigureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureCollectionViewCell.swift; sourceTree = "<group>"; };
+		71B0B99E2556E14500AC5E15 /* FigureCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FigureCollectionViewCell.xib; sourceTree = "<group>"; };
 		71B0B9BD25570A2C00AC5E15 /* CollectionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCreator.swift; sourceTree = "<group>"; };
+		71B0B9CE255726F000AC5E15 /* Zero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zero.swift; sourceTree = "<group>"; };
+		71B0B9E325572A5F00AC5E15 /* Cross.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cross.swift; sourceTree = "<group>"; };
+		71B0B9E825572A9600AC5E15 /* Cross.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cross.xib; sourceTree = "<group>"; };
+		71B0B9ED25572C4D00AC5E15 /* Zero.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Zero.xib; sourceTree = "<group>"; };
+		71B2230D255732B7003D05C2 /* GameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameField.swift; sourceTree = "<group>"; };
+		71B22315255737EA003D05C2 /* EmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionViewCell.swift; sourceTree = "<group>"; };
+		71B22316255737EA003D05C2 /* EmptyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,8 +172,9 @@
 		71B0B93C2556A16300AC5E15 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				71B0B9C5255726C300AC5E15 /* Figures */,
 				71B0B93E2556A1B200AC5E15 /* Player.swift */,
-				71B0B9482556A34300AC5E15 /* Figure.swift */,
+				71B2230D255732B7003D05C2 /* GameField.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,8 +195,10 @@
 		71B0B99C2556E12400AC5E15 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				71B0B99D2556E14500AC5E15 /* CollectionViewCell.swift */,
-				71B0B99E2556E14500AC5E15 /* CollectionViewCell.xib */,
+				71B0B99D2556E14500AC5E15 /* FigureCollectionViewCell.swift */,
+				71B0B99E2556E14500AC5E15 /* FigureCollectionViewCell.xib */,
+				71B22315255737EA003D05C2 /* EmptyCollectionViewCell.swift */,
+				71B22316255737EA003D05C2 /* EmptyCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -201,6 +218,18 @@
 				71B0B9BD25570A2C00AC5E15 /* CollectionCreator.swift */,
 			);
 			path = Facade;
+			sourceTree = "<group>";
+		};
+		71B0B9C5255726C300AC5E15 /* Figures */ = {
+			isa = PBXGroup;
+			children = (
+				71B0B9482556A34300AC5E15 /* Figure.swift */,
+				71B0B9E325572A5F00AC5E15 /* Cross.swift */,
+				71B0B9E825572A9600AC5E15 /* Cross.xib */,
+				71B0B9CE255726F000AC5E15 /* Zero.swift */,
+				71B0B9ED25572C4D00AC5E15 /* Zero.xib */,
+			);
+			path = Figures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,8 +336,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				71B0B90825569E4D00AC5E15 /* LaunchScreen.storyboard in Resources */,
+				71B0B9EE25572C4D00AC5E15 /* Zero.xib in Resources */,
 				71B0B90525569E4D00AC5E15 /* Assets.xcassets in Resources */,
-				71B0B9A02556E14500AC5E15 /* CollectionViewCell.xib in Resources */,
+				71B22318255737EA003D05C2 /* EmptyCollectionViewCell.xib in Resources */,
+				71B0B9A02556E14500AC5E15 /* FigureCollectionViewCell.xib in Resources */,
+				71B0B9E925572A9600AC5E15 /* Cross.xib in Resources */,
 				71B0B90325569E4D00AC5E15 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,14 +369,18 @@
 				71B0B9702556CCEC00AC5E15 /* GameViewController.swift in Sources */,
 				71B0B9982556DE2F00AC5E15 /* DrawStrategysFactory.swift in Sources */,
 				71B0B9772556CD0000AC5E15 /* InitPlayerViewController.swift in Sources */,
+				71B0B9CF255726F000AC5E15 /* Zero.swift in Sources */,
 				71B0B8FC25569E4D00AC5E15 /* AppDelegate.swift in Sources */,
 				71B0B9492556A34300AC5E15 /* Figure.swift in Sources */,
 				71B0B9862556CDF900AC5E15 /* StartViewController.swift in Sources */,
+				71B0B9E425572A5F00AC5E15 /* Cross.swift in Sources */,
 				71B0B9BE25570A2C00AC5E15 /* CollectionCreator.swift in Sources */,
 				71B0B8FE25569E4D00AC5E15 /* SceneDelegate.swift in Sources */,
 				71B0B93F2556A1B200AC5E15 /* Player.swift in Sources */,
 				71B0B95C2556C2D600AC5E15 /* DrawStrategy.swift in Sources */,
-				71B0B99F2556E14500AC5E15 /* CollectionViewCell.swift in Sources */,
+				71B2230E255732B7003D05C2 /* GameField.swift in Sources */,
+				71B22317255737EA003D05C2 /* EmptyCollectionViewCell.swift in Sources */,
+				71B0B99F2556E14500AC5E15 /* FigureCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
