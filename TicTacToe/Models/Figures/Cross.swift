@@ -7,7 +7,7 @@
 
 import UIKit
 
-@IBDesignable class Cross: Figure {
+@IBDesignable final class Cross: Figure {
         
     override func updateShapeLayer() {
         super.updateShapeLayer()

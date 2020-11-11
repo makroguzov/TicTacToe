@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DrawStrategysFactory {
+final class DrawStrategysFactory {
     
     enum Errors: Error {
         case InvalidFigureId

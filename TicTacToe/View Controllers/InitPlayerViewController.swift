@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InitPlayerViewController: UIViewController {
+final class InitPlayerViewController: UIViewController {
 
     // MARK: - Errors description
     

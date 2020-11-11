@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FigureCollectionViewCell: UICollectionViewCell {
+final class FigureCollectionViewCell: UICollectionViewCell {
 
     static let id = "FigureCollectionViewCell"
     static let nibName = "FigureCollectionViewCell"

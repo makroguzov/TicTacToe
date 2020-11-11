@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EmptyCollectionViewCell: UICollectionViewCell {
+final class EmptyCollectionViewCell: UICollectionViewCell {
 
     static let id = "EmptyCollectionViewCell"
     static let nibName = "EmptyCollectionViewCell"

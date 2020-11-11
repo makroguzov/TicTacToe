@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PlayersState: GameState {
+final class PlayersState: GameState {
 
     private var players = [Player]()
     private var curentPlayerIndex: Int = 0
@@ -27,8 +27,10 @@ class PlayersState: GameState {
     }
  
     func update() {
-        delegate.updateWithState(playerName: player?.name ?? "")
-        setNextPlayer()
+        if let player = player  {
+            delegate.updateWithState(lableText: "Сейчас ходит: \(player.name)")
+            setNextPlayer()
+        }
     }
     
     private func setNextPlayer() {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-@IBDesignable class Zero: Figure {
+@IBDesignable final class Zero: Figure {
     
     override func updateShapeLayer() {
         super.updateShapeLayer()

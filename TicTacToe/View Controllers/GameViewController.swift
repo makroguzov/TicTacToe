@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+final class GameViewController: UIViewController {
 
     // MARK: Properties
     
@@ -57,12 +57,12 @@ class GameViewController: UIViewController {
 // MARK: - WithStateUpdatable
 
 protocol WithStateUpdatable {
-    func updateWithState(playerName: String)
+    func updateWithState(lableText: String)
 }
 
 extension GameViewController: WithStateUpdatable {
-    func updateWithState(playerName: String) {
-        curentPlayerLable.text = "Сейчас ходит: \(playerName)"
+    func updateWithState(lableText: String) {
+        curentPlayerLable.text = lableText
         curentPlayerLable.sizeToFit()
     }
 }

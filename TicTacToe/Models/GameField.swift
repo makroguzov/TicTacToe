@@ -14,11 +14,13 @@ final class GameField: UICollectionView {
     
     private var field: [[Figure?]]
     private let cellFrame: CGRect
+    private(set) var size: Int
     
     // MARK: init
     
     init(size: Int, frame: CGRect, collectionViewLayout: UICollectionViewLayout) {
-        field = (0 ..< size).map{ _ in (0 ..< size).map { _ in nil } }
+        self.field = (0 ..< size).map{ _ in (0 ..< size).map { _ in nil } }
+        self.size = size
         
         let width = frame.width / CGFloat(size)
         let height = frame.width / CGFloat(size)
@@ -46,6 +48,20 @@ final class GameField: UICollectionView {
         let column = indexPath.row
         
         return field[row][column]
+    }
+    
+    func getColumn(_ column: Int) -> [Figure?] {
+        return field.reduce(into: []) { $0.append($1[column]) }
+    }
+    
+    func getRow(_ row: Int) -> [Figure?] {
+        return field[row]
+    }
+    
+    func getDiagonals() -> ([Figure?], [Figure?]) {
+        let leftDiag = Array(0 ..< size).reduce(into: []) { $0.append(field[$1][$1]) }
+        let rightDiag = Array(0 ..< size).reduce(into: []) { $0.append(field[$1][(size - $1)]) }
+        return (leftDiag, rightDiag)
     }
 }
 

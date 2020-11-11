@@ -26,5 +26,13 @@ final class Player {
     func draw(inField gameField: GameField, at indexPath: IndexPath) {
         gameField.draw(strategy: drawStrategy, at: indexPath)
     }
+    
+    func isMy(figure: Figure?) -> Bool {
+        if let figure = figure {
+            return drawStrategy.isMy(figure: figure)
+        } else {
+            return false
+        }
+    }
 }
 

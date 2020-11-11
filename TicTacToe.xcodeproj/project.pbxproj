@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		715AC4F8255C6DED00D4DC26 /* WinnerChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715AC4F7255C6DED00D4DC26 /* WinnerChecker.swift */; };
 		7169E5CC255C1A4E00DE9635 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7169E5CB255C1A4E00DE9635 /* GameState.swift */; };
 		7169E5D1255C1AD100DE9635 /* PlayersState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7169E5D0255C1AD100DE9635 /* PlayersState.swift */; };
 		7169E5D6255C1ADB00DE9635 /* GameOverState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7169E5D5255C1ADB00DE9635 /* GameOverState.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		715AC4F7255C6DED00D4DC26 /* WinnerChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerChecker.swift; sourceTree = "<group>"; };
 		7169E5CB255C1A4E00DE9635 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		7169E5D0255C1AD100DE9635 /* PlayersState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersState.swift; sourceTree = "<group>"; };
 		7169E5D5255C1ADB00DE9635 /* GameOverState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverState.swift; sourceTree = "<group>"; };
@@ -150,7 +152,7 @@
 				71B0B9BC2557099A00AC5E15 /* Facade */,
 				71B0B9B52557087100AC5E15 /* Draw Strategys */,
 				71B0B93C2556A16300AC5E15 /* Models */,
-				71B0B99C2556E12400AC5E15 /* Cell */,
+				71B0B99C2556E12400AC5E15 /* Cells */,
 				71B0B9312556A0F600AC5E15 /* View Controllers */,
 				71B0B93D2556A16D00AC5E15 /* Support Files */,
 			);
@@ -209,7 +211,7 @@
 			path = "Support Files";
 			sourceTree = "<group>";
 		};
-		71B0B99C2556E12400AC5E15 /* Cell */ = {
+		71B0B99C2556E12400AC5E15 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				71B0B99D2556E14500AC5E15 /* FigureCollectionViewCell.swift */,
@@ -217,7 +219,7 @@
 				71B22315255737EA003D05C2 /* EmptyCollectionViewCell.swift */,
 				71B22316255737EA003D05C2 /* EmptyCollectionViewCell.xib */,
 			);
-			path = Cell;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		71B0B9B52557087100AC5E15 /* Draw Strategys */ = {
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				71B0B9BD25570A2C00AC5E15 /* GameFieldCreator.swift */,
+				715AC4F7255C6DED00D4DC26 /* WinnerChecker.swift */,
 			);
 			path = Facade;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				71B0B9BE25570A2C00AC5E15 /* GameFieldCreator.swift in Sources */,
 				71B0B8FE25569E4D00AC5E15 /* SceneDelegate.swift in Sources */,
 				7169E5D1255C1AD100DE9635 /* PlayersState.swift in Sources */,
+				715AC4F8255C6DED00D4DC26 /* WinnerChecker.swift in Sources */,
 				71B0B93F2556A1B200AC5E15 /* Player.swift in Sources */,
 				71B0B95C2556C2D600AC5E15 /* DrawStrategy.swift in Sources */,
 				71B2230E255732B7003D05C2 /* GameField.swift in Sources */,
