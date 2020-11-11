@@ -7,18 +7,20 @@
 
 import UIKit
 
-class CollectionCreator {
+final class GameFieldCreator {
         
-    func createCollectionViewController(for controller: GameViewController, with size: Int) -> UICollectionView {
+    func createCollectionViewController(for controller: GameViewController, with size: Int) -> GameField {
         let frame = getCollectionFrame(in: controller.view)
         let collectionViewLayout = getCollectionViewLayout(in: controller.view, with: CGFloat(size))
         
-        let collectionView = UICollectionView(frame: frame,
+        let gameField = GameField(size: size, frame: frame,
                                           collectionViewLayout: collectionViewLayout)
         
-        setUp(collectionView, in: controller)
-        return collectionView
+        setUp(gameField, in: controller)
+        return gameField
     }
+    
+    // MARK: - Methods
     
     private func getCollectionFrame(in view: UIView) -> CGRect {
         let x: CGFloat = 0
@@ -26,10 +28,8 @@ class CollectionCreator {
         let width = view.frame.width
         let height = view.frame.width
         
-        return CGRect(x: x,
-                      y: y,
-                      width: width,
-                      height: height
+        return CGRect(x: x, y: y,
+                      width: width, height: height
         )
     }
     
@@ -60,7 +60,5 @@ class CollectionCreator {
         collectionView.register(UINib(nibName: EmptyCollectionViewCell.nibName, bundle: nil),
                                 forCellWithReuseIdentifier: EmptyCollectionViewCell.id
         )
-
     }
-
 }

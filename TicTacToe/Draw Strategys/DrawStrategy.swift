@@ -5,20 +5,24 @@
 //  Created by Валерий Макрогузов on 07.11.2020.
 //
 
-import Foundation
+import UIKit
 
 protocol DrawStrategy: AnyObject {
-    func drawFigure() -> Figure
+    func drawFigure(frame: CGRect) -> Figure
 }
 
-class DrawСross: DrawStrategy {
-    func drawFigure() -> Figure {
-        return Cross()
+
+
+final class DrawСross: DrawStrategy {
+    func drawFigure(frame: CGRect) -> Figure {
+        return Cross(frame: frame)
     }
 }
 
-class DrawZero: DrawStrategy {
-    func drawFigure() -> Figure {
-        return Zero()
+
+
+final class DrawZero: DrawStrategy {
+    func drawFigure(frame: CGRect) -> Figure {
+        return Zero(frame: frame)
     }
 }

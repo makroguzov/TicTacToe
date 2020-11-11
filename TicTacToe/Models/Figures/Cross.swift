@@ -8,36 +8,24 @@
 import UIKit
 
 @IBDesignable class Cross: Figure {
-    
-    override func draw(_ rect: CGRect) {
+        
+    override func updateShapeLayer() {
+        super.updateShapeLayer()
         drawCross()
     }
     
-    private func drawCross() {
-        drawLine(from: CGPoint(x: 0, y: 0),
-                 to: CGPoint(x: frame.maxX, y: frame.maxY)
-        )
-        
-        drawLine(from: CGPoint(x: frame.maxY, y: 0),
-                 to: CGPoint(x: 0, y: frame.maxY)
-        )
-    }
+    // MARK: - Draw methods
     
-    private func drawLine(from startPoint: CGPoint, to endPoint: CGPoint) {
-        let line = UIBezierPath()
+    private func drawCross() {
+        let path = UIBezierPath()
         
-        line.move(to: startPoint)
-        line.addLine(to: endPoint)
-        line.close()
+        path.move(to: CGPoint(x: 0.25 * bounds.width, y: 0.25 * bounds.height))
+        path.addLine(to: CGPoint(x: 0.75 * bounds.width, y: 0.75 * bounds.height))
+        path.move(to: CGPoint(x: 0.75 * bounds.width, y: 0.25 * bounds.height))
+        path.addLine(to: CGPoint(x: 0.25 * bounds.width, y: 0.75 * bounds.height))
+        path.close()
         
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = line.cgPath
-        
-        shapeLayer.fillColor = fillColor.cgColor
-        shapeLayer.strokeColor = strokeColor.cgColor
-        shapeLayer.lineWidth = lineWidth
-        
-        layer.addSublayer(shapeLayer)
+        shapeLayer.path = path.cgPath
     }
 }
 

@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="Zero" customModule="TicTacToe" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="256" height="253"/>
+            <rect key="frame" x="0.0" y="0.0" width="162" height="152"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -25,7 +25,7 @@
                     <color key="value" systemColor="systemPinkColor"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
-            <point key="canvasLocation" x="-26.086956521739133" y="74.665178571428569"/>
+            <point key="canvasLocation" x="-450.72463768115944" y="51.5625"/>
         </view>
     </objects>
     <resources>

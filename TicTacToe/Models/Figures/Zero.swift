@@ -9,31 +9,22 @@ import UIKit
 
 @IBDesignable class Zero: Figure {
     
-    
-    override func draw(_ rect: CGRect) {
+    override func updateShapeLayer() {
+        super.updateShapeLayer()
         drawCircle()
     }
     
+    // MARK: - Draw methods
+    
     private func drawCircle() {
-        let halfSize: CGFloat = min(bounds.size.width/2, bounds.size.height/2)
-        
-        let circlePath = UIBezierPath(
-            arcCenter: CGPoint(x: halfSize, y: halfSize),
-            radius: halfSize - (lineWidth / 2),
+        let center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
+        let radius = 0.3 * min(bounds.width, bounds.height)
+        shapeLayer.path = UIBezierPath(
+            arcCenter: center,
+            radius: radius,
             startAngle: 0,
             endAngle: CGFloat.pi * 2,
             clockwise: true
-        )
-        
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = circlePath.cgPath
-        
-        shapeLayer.fillColor = fillColor.cgColor
-        shapeLayer.strokeColor = strokeColor.cgColor
-        shapeLayer.lineWidth = lineWidth
-        
-        layer.addSublayer(shapeLayer)
-        layer.masksToBounds = true
+        ).cgPath
     }
-
 }

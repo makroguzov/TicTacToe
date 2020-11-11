@@ -9,10 +9,13 @@ import UIKit
 
 class InitPlayerViewController: UIViewController {
 
+    // MARK: - Errors description
+    
     private enum Errors: Error {
         case NoPlayerName
-        case NoStrategySelected
     }
+    
+    // MARK: - IBOutlets
     
     @IBOutlet private weak var playerLable: UILabel!
     @IBOutlet private weak var playerNameTextField: UITextField! {
@@ -21,10 +24,14 @@ class InitPlayerViewController: UIViewController {
         }
     }
     @IBOutlet private weak var figureSegmentControl: UISegmentedControl!
-    @IBOutlet weak var createPlayerButton: UIButton!
+    @IBOutlet private weak var createPlayerButton: UIButton!
+    
+    // MARK: - Properties
     
     private let playersCount = 2
     private var players = [Player]()
+    
+    // MARK: Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +39,17 @@ class InitPlayerViewController: UIViewController {
         updateUI()
     }
     
+    // MARK: - IBActions
+    
     @IBAction func createPlayerButtonAction(_ sender: UIButton) {
-        if (players.count + 1) == playersCount {
-            startTheGame()
-        } else {
+        if players.count < playersCount {
             createPlayer()
+        } else {
+            startTheGame()
         }
     }
+    
+    // MARK: - Methods
     
     private func createPlayer() {
         do {
@@ -48,12 +59,12 @@ class InitPlayerViewController: UIViewController {
             let player = Player(name: name,
                                 drawStrategy: strategy
             )
-            players.append(player)
             
+            players.append(player)
             updateUI()
         } catch Errors.NoPlayerName {
             showAllert(title: "", message: "Не задано имя пользователя.")
-        } catch Errors.NoStrategySelected {
+        } catch DrawStrategysFactory.Errors.InvalidFigureId {
             showAllert(title: "", message: "Не выбрана стратегия.")
         } catch {
             print(error.localizedDescription)
@@ -71,24 +82,14 @@ class InitPlayerViewController: UIViewController {
         let factory = DrawStrategysFactory()
         let selectedItem = figureSegmentControl.selectedSegmentIndex
         
-        let strategy: DrawStrategy
-        switch selectedItem {
-        case 0:
-            strategy = factory.getStrategy(figure: .cross)
-        case 1:
-            strategy = factory.getStrategy(figure: .zero)
-        default:
-            throw Errors.NoStrategySelected
+        do {
+            let strategy: DrawStrategy
+            strategy = try factory.getStrategy(figureId: selectedItem)
+            figureSegmentControl.removeSegment(at: selectedItem, animated: true)
+            return strategy
+        } catch {
+            throw error
         }
-        
-        figureSegmentControl.removeSegment(at: selectedItem, animated: true)
-        return strategy
-    }
-    
-    private func updateUI() {
-        playerLable.text = "Set up Player \(players.count + 1)"
-        playerNameTextField.text = ""
-        figureSegmentControl.selectedSegmentIndex = 0
     }
     
     private func showAllert(title: String, message: String) {
@@ -98,6 +99,24 @@ class InitPlayerViewController: UIViewController {
         )
         present(alert, animated: true, completion: nil)
     }
+
+    // MARK: - UI Methods
+    
+    private func updateUI() {
+        if players.count == playersCount {
+            playerLable.isHidden = true
+            figureSegmentControl.isHidden = true
+            playerNameTextField.isHidden = true
+            createPlayerButton.setTitle("Start the game", for: .normal)
+        } else {
+            playerLable.text = "Set up Player \(players.count + 1)"
+            playerNameTextField.text = ""
+            figureSegmentControl.selectedSegmentIndex = 0
+        }
+    }
+    
+    
+    // MARK: - Start The Game methods
     
     private func startTheGame() {
         performSegue(withIdentifier: "StartTheGame", sender: nil)
@@ -111,12 +130,17 @@ class InitPlayerViewController: UIViewController {
                 fatalError()
             }
             
-            destionation.players = players
+            let state = PlayersState(players: players, delegate: destionation)
+            
+            destionation.fieldSize = 3
+            destionation.state = state
         default:
             return
         }
     }
 }
+
+// MARK: - UITextFieldDelegate
 
 extension InitPlayerViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

@@ -8,16 +8,23 @@
 import Foundation
 
 class DrawStrategysFactory {
+    
+    enum Errors: Error {
+        case InvalidFigureId
+    }
+    
     enum Figure {
         case cross, zero
     }
     
-    func getStrategy(figure: Figure) -> DrawStrategy {
-        switch figure {
-        case .cross:
+    func getStrategy(figureId: Int) throws -> DrawStrategy {
+        switch figureId {
+        case 0:
             return DrawСross()
-        case .zero:
+        case 1:
             return DrawZero()
+        default:
+            throw Errors.InvalidFigureId
         }
     }
 }

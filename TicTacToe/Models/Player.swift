@@ -7,19 +7,24 @@
 
 import Foundation
 
-class Player {
+final class Player {
+    
+    // MARK: Properties
     
     private let drawStrategy: DrawStrategy
-    let name: String
+    private(set) var name: String
+        
+    // MARK: - init
     
     init(name: String, drawStrategy: DrawStrategy) {
         self.name = name
         self.drawStrategy = drawStrategy
     }
     
-    func draw(in field: GameField, at indexPath: IndexPath) {
-        let figure = drawStrategy.drawFigure()
-        field.draw(figure, in: indexPath)
+    // MARK: - Methods
+    
+    func draw(inField gameField: GameField, at indexPath: IndexPath) {
+        gameField.draw(strategy: drawStrategy, at: indexPath)
     }
 }
 

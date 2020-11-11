@@ -24,6 +24,5 @@ class FigureCollectionViewCell: UICollectionViewCell {
     func setUp(with figure: Figure) {
         self.figure = figure
         figure.bounds = bounds
-        figure.draw(bounds)
     }
 }
