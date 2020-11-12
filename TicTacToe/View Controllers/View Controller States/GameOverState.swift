@@ -21,6 +21,11 @@ final class GameOverState: GameState {
         }
     }
     
+    convenience init(delegate: WithStateUpdatable, winner: Player?) {
+        self.init(delegate: delegate)
+        self.player = winner
+    }
+    
     required init(delegate: WithStateUpdatable) {
         self.delegate = delegate
     }

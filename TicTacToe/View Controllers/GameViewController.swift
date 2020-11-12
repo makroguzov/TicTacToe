@@ -21,6 +21,10 @@ final class GameViewController: UIViewController {
     // MARK: - Private properties
         
     private var gameField: GameField!
+    private var checker: WinnerChecker!
+    
+    private var moveCounter: Int = 0
+
     private var curentPlayerLable: UILabel = UILabel()
     
     // MARK: - Life sycle
@@ -29,6 +33,7 @@ final class GameViewController: UIViewController {
         super.viewDidLoad()
         
         addGameField()
+        addWinnerChecker()
         addCurentPlayerLable()
     }
     
@@ -39,6 +44,10 @@ final class GameViewController: UIViewController {
         
         gameField = gameFieldCreator.createCollectionViewController(for: self, with: fieldSize)
         view.addSubview(gameField)
+    }
+    
+    private func addWinnerChecker() {
+        checker = WinnerChecker(gameField: gameField)
     }
     
     private func addCurentPlayerLable() {
@@ -74,9 +83,23 @@ extension GameViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let currentPlayer = state.player {
             currentPlayer.draw(inField: gameField, at: indexPath)
+            moveCounter += 1
+            
+            if moveCounter == (fieldSize * fieldSize) {
+                state = GameOverState(delegate: self, winner: nil)
+            }
+            
+            if checker.isPlayerWin(lastMove: indexPath, player: currentPlayer) {
+                state = GameOverState(delegate: self, winner: currentPlayer)
+            }
+            
             collectionView.reloadItems(at: [indexPath])
             state.update()
         }
+    }
+    
+    private func finishTheGame(with winner: Player?) {
+        
     }
 }
 

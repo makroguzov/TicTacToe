@@ -30,8 +30,6 @@
 		71B0B9BE25570A2C00AC5E15 /* GameFieldCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B9BD25570A2C00AC5E15 /* GameFieldCreator.swift */; };
 		71B0B9CF255726F000AC5E15 /* Zero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B9CE255726F000AC5E15 /* Zero.swift */; };
 		71B0B9E425572A5F00AC5E15 /* Cross.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B9E325572A5F00AC5E15 /* Cross.swift */; };
-		71B0B9E925572A9600AC5E15 /* Cross.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B0B9E825572A9600AC5E15 /* Cross.xib */; };
-		71B0B9EE25572C4D00AC5E15 /* Zero.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B0B9ED25572C4D00AC5E15 /* Zero.xib */; };
 		71B2230E255732B7003D05C2 /* GameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B2230D255732B7003D05C2 /* GameField.swift */; };
 		71B22317255737EA003D05C2 /* EmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B22315255737EA003D05C2 /* EmptyCollectionViewCell.swift */; };
 		71B22318255737EA003D05C2 /* EmptyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B22316255737EA003D05C2 /* EmptyCollectionViewCell.xib */; };
@@ -84,8 +82,6 @@
 		71B0B9BD25570A2C00AC5E15 /* GameFieldCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldCreator.swift; sourceTree = "<group>"; };
 		71B0B9CE255726F000AC5E15 /* Zero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zero.swift; sourceTree = "<group>"; };
 		71B0B9E325572A5F00AC5E15 /* Cross.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cross.swift; sourceTree = "<group>"; };
-		71B0B9E825572A9600AC5E15 /* Cross.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cross.xib; sourceTree = "<group>"; };
-		71B0B9ED25572C4D00AC5E15 /* Zero.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Zero.xib; sourceTree = "<group>"; };
 		71B2230D255732B7003D05C2 /* GameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameField.swift; sourceTree = "<group>"; };
 		71B22315255737EA003D05C2 /* EmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionViewCell.swift; sourceTree = "<group>"; };
 		71B22316255737EA003D05C2 /* EmptyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -245,9 +241,7 @@
 			children = (
 				71B0B9482556A34300AC5E15 /* Figure.swift */,
 				71B0B9E325572A5F00AC5E15 /* Cross.swift */,
-				71B0B9E825572A9600AC5E15 /* Cross.xib */,
 				71B0B9CE255726F000AC5E15 /* Zero.swift */,
-				71B0B9ED25572C4D00AC5E15 /* Zero.xib */,
 			);
 			path = Figures;
 			sourceTree = "<group>";
@@ -356,11 +350,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				71B0B90825569E4D00AC5E15 /* LaunchScreen.storyboard in Resources */,
-				71B0B9EE25572C4D00AC5E15 /* Zero.xib in Resources */,
 				71B0B90525569E4D00AC5E15 /* Assets.xcassets in Resources */,
 				71B22318255737EA003D05C2 /* EmptyCollectionViewCell.xib in Resources */,
 				71B0B9A02556E14500AC5E15 /* FigureCollectionViewCell.xib in Resources */,
-				71B0B9E925572A9600AC5E15 /* Cross.xib in Resources */,
 				71B0B90325569E4D00AC5E15 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
