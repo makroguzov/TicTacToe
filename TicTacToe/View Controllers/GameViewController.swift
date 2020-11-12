@@ -82,24 +82,30 @@ extension GameViewController: WithStateUpdatable {
 extension GameViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let currentPlayer = state.player {
-            currentPlayer.draw(inField: gameField, at: indexPath)
-            moveCounter += 1
-            
-            if moveCounter == (fieldSize * fieldSize) {
-                state = GameOverState(delegate: self, winner: nil)
-            }
-            
-            if checker.isPlayerWin(lastMove: indexPath, player: currentPlayer) {
-                state = GameOverState(delegate: self, winner: currentPlayer)
-            }
+            makeMove(with: currentPlayer, at: indexPath)
             
             collectionView.reloadItems(at: [indexPath])
             state.update()
         }
     }
     
-    private func finishTheGame(with winner: Player?) {
+    private func makeMove(with player: Player, at indexPath: IndexPath) {
+        player.draw(inField: gameField, at: indexPath)
+        moveCounter += 1
         
+        if let winner = defineWinner(lastMove: indexPath, player: player) {
+            state = GameOverState(delegate: self, winner: winner)
+        } else if moveCounter == (fieldSize * fieldSize) {
+            state = GameOverState(delegate: self, winner: nil)
+        }
+    }
+    
+    private func defineWinner(lastMove: IndexPath, player: Player) -> Player? {
+        if checker.isPlayerWin(lastMove: lastMove, player: player) {
+            return player
+        } else {
+            return nil
+        }
     }
 }
 
