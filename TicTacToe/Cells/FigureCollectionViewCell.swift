@@ -12,7 +12,7 @@ final class FigureCollectionViewCell: UICollectionViewCell {
     static let id = "FigureCollectionViewCell"
     static let nibName = "FigureCollectionViewCell"
     
-    @IBOutlet private weak var figure: UIView!
+    @IBOutlet private weak var figure: Figure!
     
     override func awakeFromNib() {
         super.awakeFromNib()

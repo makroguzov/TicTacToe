@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="344" height="300"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7U-mK-sdg">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7U-mK-sdg" customClass="Figure" customModule="TicTacToe" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="344" height="300"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
